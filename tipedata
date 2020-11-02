@@ -1,0 +1,1163 @@
+package tugaskedua;githib
+/*  
+    NAMA    : ADIDTIYA PUTRA CANIAGO
+    NIM     : 2003113945
+    JURUSAN : SISTEM INFORMASI
+    KELAS   : A
+    MATKUL  : KONSEP PEMOGRAMAN 
+*/
+
+import java.util.*;
+
+public class tipedata {
+    //PENGENALAN
+    public static void main(String[] args) {
+        System.out.println("TUGAS INI DIBUAT OLEH ADIDTIYA PUTRA CANIAGO 2003113945 \n");
+        System.out.println("ALERT : PADA PROGRAM INI TERDAPAT Do-While, Try-Catch DAN Switch BERSARANG!");
+        System.out.println("FYI   : TOTAL LINE YANG TELAH DIKERJAKAN SEBANYAK 1163 LINES DENGAN PENGERJAAN  ± 3 HARI");
+        System.out.println("FYI   : TERDAPAT 49 METHOD (DENGAN 1 Method UTAMA, 1 Method Biasa, dan 47 Method Private) Yang Siap Melayani Anda\n\n");
+        menu();
+    }
+    //MENU
+    static void menu(){
+        //DEKLARASI TIPE DATA DAN VARIABEL PERALIHAN
+        int a;
+        Scanner sc = new Scanner (System.in);
+        boolean flag = false; //Berguna untuk membandingkan nilai apakah bernilai TRUE atau FALSE
+
+        //MENU
+        System.out.println("____________________MENU____________________\n");
+        System.out.println("TENTUKAN PILIHAN ANDA : \n"
+                             + " 1. Modifikasi Contoh \n"
+                             + " 2. Menampilkan Nama Variabel \n" 
+                             + " 3. Kalkulasi JAM - MENIT - DETIK \n"
+                             + " 4. Kalkulasi JARAK TEMPUH");
+        System.out.print("PILIHAN : ");
+        do{
+            try{
+               a = sc.nextInt();
+               System.out.println();
+                 switch (a) {
+                     case 1:
+                         System.out.println("Anda Memilih Modifikasi Contoh");
+                         Modcontoh(); //Menuju Program 1
+                         break;
+                     case 2:
+                         System.out.println("Anda Memilih Nama Variabel");
+                         Namvar(); //Menuju Program 2
+                         break;
+                     case 3:
+                         System.out.println("Anda Memilih Kalkulasi JAM - MENIT - DETIK");
+                         KJMD(); //Menuju Program 3
+                         break;
+                     case 4:
+                         System.out.println("Anda Memilih Kalkulasi JARAK TEMPUH");
+                         KJT(); //Menuju Program 4
+                         break;
+                     default:
+                         System.out.println("Anda Tidak Memilih");
+                         menu(); //Menuju Program Menu Karena tidak memilih 1 - 4 (Looping)
+                         break;
+                 }
+            }
+            catch(InputMismatchException exception){
+               System.out.println("HANYA INTEGER SAJA YANG DIPERBOLEHKAN!");
+               alert(); //Menuju Program Akhir untuk menuntaskan Infinite Looping
+               break;
+            }
+        }
+        while(flag);
+    }
+    
+    //TUGAS 1
+    private static void Modcontoh() {
+        System.out.println("\nSELAMAT DATANG DI PROGRAM MODIFIKASI CONTOH 2.4");
+         //DEKLARASI TIPE DATA DAN VARIABEL PERALIHAN
+        int i = 37, j = 42, k;
+        double x = 27.475, y = 7.22;
+        Scanner sc = new Scanner (System.in);
+        boolean flag = false; //Berguna untuk membandingkan nilai apakah bernilai TRUE atau FALSE
+        
+        //PROGRAM NO 1
+        System.out.println("NILAI PADA VARIABEL");
+        System.out.println(" i = " + i + "\n j = " + j + "\n x = " + x + "\n y = " + y);
+        System.out.println();
+        System.out.println("Apakah Yang Kalian Akan lakukan Dengan Nilai Variabel tadi?");
+        System.out.println("1.Perjumlahan \n2.Pengurangan \n3.Pengkalian \n4.Pembagian \n5.Menampilkan Hasil Bagi\n6.Tampilkan Semua Hasil");
+        
+        do{
+            try{
+                k = sc.nextInt();
+        
+                switch (k) {
+                    case 1:
+                        //penjumlahan angka
+                        System.out.println("Adding...");
+                        System.out.println(" i + j = " + (i + j));
+                        System.out.println(" x + y = " + (x + y));
+                        break;
+                    case 2:
+                        //pengurangan angka
+                        System.out.println("Substracting...");
+                        System.out.println(" i + j = " + (i - j));
+                        System.out.println(" x + y = " + (x - y));
+                        break;
+                    case 3:
+                        //pengkalian angka
+                        System.out.println("Multiplying...");
+                        System.out.println(" i + j = " + (i * j));
+                        System.out.println(" x + y = " + (x * y));
+                        break;
+                    case 4:
+                        //pembagian angka
+                        System.out.println("Divisioning...");
+                        System.out.println(" i + j = " + (i / j));
+                        System.out.println(" x + y = " + (x / y));
+                        break;
+                    case 5:
+                        //sisa bagi angka
+                        System.out.println("Moduling...");
+                        System.out.println(" i + j = " + (i % j));
+                        System.out.println(" x + y = " + (x % y));
+                        break;
+                    case 6:
+                        System.out.println(" i + j = " + (i + j));
+                        System.out.println(" x + y = " + (x + y));
+                        System.out.println(" i + j = " + (i - j));
+                        System.out.println(" x + y = " + (x - y));
+                        System.out.println(" i + j = " + (i * j));
+                        System.out.println(" x + y = " + (x * y));
+                        System.out.println(" i + j = " + (i / j));
+                        System.out.println(" x + y = " + (x / y));
+                        System.out.println(" i + j = " + (i % j));
+                        System.out.println(" x + y = " + (x % y));
+                        break;
+                        
+                    default:
+                        System.out.println("Anda Tidak Memilih");
+                        Modcontoh(); //Menuju Program 1 Karena tidak memilih 1 - 5 (Looping)
+                        break;
+                }
+            }
+            catch(InputMismatchException exception){
+               System.out.println("HANYA INTEGER SAJA YANG DIPERBOLEHKAN!");
+               antiMC(); //Menuju Program Anti Looping untuk menuntaskan Infinite Looping Serta Mengulangi kembali Program
+               break;
+            }
+        }
+        while (flag);
+    }
+    
+    //TUGAS 2
+    private static void Namvar() {
+        System.out.println("\nSELAMAT DATANG DI PROGRAM NAMA VARIABEL");
+         //DEKLARASI TIPE DATA DAN VARIABEL PERALIHAN
+        int number = 10, inp, a;
+        char letter = 'a';
+        boolean result = true, flag = false;
+        String str = "hello";
+        Scanner sc = new Scanner (System.in);
+        
+        //PROGRAM NO 2
+        System.out.println("Tampilkan Nama Variabel Dengan Urutan yang dipilih Atau Urutan Secara Default? "
+                + "\n 1. Tampilkan Variabel Dengan Urutan yang dipilih "
+                + "\n 2. Tampilkan Variabel Secara Default ");
+
+        inp = sc.nextInt();
+        
+        do{
+            try{
+                switch (inp) {
+                    case 1:
+                        System.out.println("MASUKKAN YANG MANA YANG DULUAN DITAMPILKAN");
+                        System.out.println("1. Number \n2. Letter \n3. Result \n4. String");
+                        System.out.print("INPUT 1 :");
+                        a = sc.nextInt();
+                            switch (a) {
+                                case 1:
+                                    NamvarA1();
+                                    break;
+                                case 2:
+                                    NamvarA2();
+                                    break;
+                                case 3:
+                                    NamvarA3();
+                                    break;
+                                case 4:
+                                    NamvarA4();
+                                    break;
+                                default:
+                                    System.out.println("MAAF INPUT SALAH");
+                                    Namvar();
+                                    break;
+                            }
+                        break;
+                    case 2:
+                        System.out.println("Number = " + number);
+                        System.out.println("letter = " + letter);
+                        System.out.println("result = " + result);
+                        System.out.println("str = " + str);
+                        break;
+                    default:
+                        System.out.println("INPUT SALAH");
+                        Namvar();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    
+    //TUGAS 3
+    private static void KJMD() {
+        System.out.println("\nSELAMAT DATANG DI PROGRAM KALKULASI JAM - MENIT - DETIK");
+        final int jamToDetik = 3600, menitToDetik = 60, jamToMenit = 60;
+        int jam, menit, detik, pilihan, result;
+        boolean flag = false;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jam : ");
+        jam   = sc.nextInt();
+        System.out.print("Masukkan menit : ");
+        menit = sc.nextInt();
+        System.out.print("Masukkan detik : ");
+        detik = sc.nextInt();
+        System.out.print("ANDA INGIN DI CONVERT KE?\n1.Dektik\n2.Menit\n3.Jam\nPILIHAN : ");
+        pilihan = sc.nextInt();
+        System.out.println();
+        do {
+            try {
+                switch (pilihan) {
+                    case 1:
+                        result = (jam * jamToDetik) + (menit * menitToDetik) + detik;
+                        System.out.println("data yang anda masukkan : ");
+                        System.out.println("JAM   = " + jam);
+                        System.out.println("MENIT = " + menit);
+                        System.out.println("TOTAL DETIK = " + result);
+                        break;
+                    case 2:
+                        result = (jam * jamToMenit) + menit + (detik / 60);
+                        System.out.println("data yang anda masukkan : ");
+                        System.out.println("JAM   = " + jam);
+                        System.out.println("DETIK = " + detik);
+                        System.out.println("TOTAL MENIT = " + result);
+                        break;
+                    case 3:
+                        result = jam + (menit / 60) + (detik / 3600);
+                        System.out.println("data yang anda masukkan : ");
+                        System.out.println("MENIT   = " + menit);
+                        System.out.println("DETIK   = " + detik);
+                        System.out.println("TOTAL JAM = " + result);
+                        break;
+                    default:
+                        System.out.println("INPUT SALAH");
+                        KJMD();
+                        break;
+                }
+            }catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiKJMD();
+            }
+        } while (flag);      
+    }
+    
+    //TUGAS 4
+    private static void KJT() {
+        System.out.println("\nSELAMAT DATANG DI KALKULASI PROGRAM JARAK TEMPUH");
+        int s,v,t;
+        boolean flag = false;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan kecepatan : ");
+        v = scanner.nextInt();
+
+        System.out.print("Masukkan waktu : ");
+        t = scanner.nextInt();
+        
+        do{
+            try{
+                s = v * t;
+                System.out.println("DATA YANG ANDA MASUKKAN ADALAH : ");
+                System.out.println("KECEPATAN = " + v);
+                System.out.println("WAKTU     = " + t);
+                System.out.println("HASIL = " + s + " m");
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiKJT();
+            }
+        }
+        while(flag);
+    }
+    
+//PROGRAM TAMBAHAN UNTUK PROGRAM NAMA VARIABEL
+    //1. BAGIAN 1
+    private static void NamvarA1(){
+        int b;
+        boolean flag = false;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("INPUT 2 :");
+                b = sc.nextInt();
+        do{
+            try{
+                switch (b) {
+                    case 1:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA1();
+                        break;
+                    case 2:
+                        Namvar12();
+                        break;
+                    case 3:
+                        Namvar13();
+                        break;
+                    case 4:
+                        Namvar14();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA1();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while (flag);
+        
+    }
+    private static void NamvarA2(){
+        int b;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.print("INPUT 2 :");
+        b = sc.nextInt();
+        do{
+            try{
+                switch (b) {
+                    case 1:
+                        Namvar21();
+                        break;
+                    case 2:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA2();
+                        break;
+                    case 3:
+                        Namvar23();
+                        break;
+                    case 4:
+                        Namvar24();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA2();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while (flag);
+        
+    }
+    private static void NamvarA3(){
+        int b;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        
+        System.out.print("INPUT 2 :");
+        b = sc.nextInt();
+        do{
+            try{
+                switch (b) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA3();
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA3();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    
+    private static void NamvarA4(){
+        int b;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.print("INPUT 2 :");
+        b = sc.nextInt();
+        do{
+            try{
+                switch (b) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA4();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        NamvarA4();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    
+    
+    //BAGIAN 2
+        //BAGIAN 2.1
+    private static void Namvar12(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 3:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar1234();
+                        break;
+                    case 4:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar1243();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar12();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    private static void Namvar13(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 2:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar1324();
+                        break;
+                    case 4:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar1342();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar13();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    private static void Namvar14(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 2:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar1423();
+                        break;
+                    case 3:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar1432();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar14();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    
+        //BAGIAN 2.2
+    private static void Namvar21(){
+       int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 3:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar2134();
+                        break;
+                    case 4:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar2143();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar21();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    private static void Namvar23(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 1:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar2314();
+                        break;
+                    case 4:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar2341();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar23();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    private static void Namvar24(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 1:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar2413();
+                        break;
+                    case 3:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar2431();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar24();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    
+        //BAGIAN 2.3
+    private static void Namvar31(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 2:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar3124();
+                        break;
+                    case 4:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar3142();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar31();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    private static void Namvar32(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 1:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar3214();
+                        break;
+                    case 4:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar3241();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar32();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    private static void Namvar42(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 1:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar4213();
+                        break;
+                    case 3:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar4231();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar42();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    private static void Namvar43(){
+        int c;
+        boolean flag = false;
+        Scanner sc = new Scanner (System.in);
+        System.out.println("INPUT HANYA 2 DAN 3");
+        System.out.print("INPUT 3 :");
+        c = sc.nextInt();
+        do{
+            try{
+                switch (c) {
+                    case 1:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar4312();
+                        break;
+                    case 2:
+                        System.out.println("BAIKLAH \n!");
+                        Namvar4321();
+                        break;
+                    default:
+                        System.out.println("MAAF INPUT TIDAK DIPERBOLEHKAN!");
+                        Namvar43();
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("MAAF, HANYA INTEGER YANG DIPERBOLEHKAN!");
+                antiNV();
+            }
+        }
+        while(flag);
+    }
+    
+    //BAGIAN 4
+        //BAGIAN 4.1
+    private static void Namvar1234(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("str = " + str); //NOMOR 4
+    }
+    private static void Namvar1243(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("result = " + result); //NOMOR 3
+    }
+    private static void Namvar1324(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("str = " + str); //NOMOR 4
+    }
+    private static void Namvar1342(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("str = " + str); //NOMOR 4
+    }
+    private static void Namvar1423(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("result = " + result); //NOMOR 3
+    }
+    private static void Namvar1432(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("letter = " + letter); //NOMOR 2 
+    }
+    
+        //BAGIAN 2.2
+    private static void Namvar2134(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("str = " + str); //NOMOR 4
+    }
+    private static void Namvar2143(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("result = " + result); //NOMOR 3
+    }
+    private static void Namvar2314(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("str = " + str); //NOMOR 4
+    }
+    private static void Namvar2341(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("Number = " + number); //NOMOR 1
+    }
+    private static void Namvar2413(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("result = " + result); //NOMOR 3
+    }
+    private static void Namvar2431(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("Number = " + number); //NOMOR 1
+    }
+    
+        //BAGIAN 4.3
+    private static void Namvar3124(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("str = " + str); //NOMOR 4
+    }
+    private static void Namvar3142(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("letter = " + letter); //NOMOR 2
+    }
+    private static void Namvar3214(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("str = " + str); //NOMOR 4
+    }
+    private static void Namvar3241(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("Number = " + number); //NOMOR 1
+
+    }
+    private static void Namvar3412(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("letter = " + letter); //NOMOR 2
+    }
+    private static void Namvar3421(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("Number = " + number); //NOMOR 1
+    }
+    
+        //BAGIAN 2.4
+    private static void Namvar4123(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("result = " + result); //NOMOR 3
+    }
+    private static void Namvar4132(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("letter = " + letter); //NOMOR 2
+    }
+    private static void Namvar4213(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("result = " + result); //NOMOR 3      
+    }
+    private static void Namvar4231(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("Number = " + number); //NOMOR 1
+    }
+    private static void Namvar4312(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("Number = " + number); //NOMOR 1
+        System.out.println("letter = " + letter); //NOMOR 2
+          
+    }
+    private static void Namvar4321(){
+        int number = 10;
+        char letter = 'a';
+        boolean result = true;
+        String str = "hello";
+        System.out.println("str = " + str); //NOMOR 4
+        System.out.println("result = " + result); //NOMOR 3
+        System.out.println("letter = " + letter); //NOMOR 2
+        System.out.println("Number = " + number); //NOMOR 1
+    }
+    
+    
+
+//PENUNTASAN LOOPING PADA PROGRAM
+    
+    //A. UNTUK PROGRAM MODIFIKASI CONTOH 2.4
+    private static void antiMC(){
+        Scanner sc = new Scanner (System.in);
+        int s,d;
+        System.out.println("APAKAH ANDA INGIN KEMBALI KE PROGRAM 1? YES (1) / NO (2)");
+        s = sc.nextInt();
+        switch (s) {
+            case 1:
+                Modcontoh();
+                break;
+            case 2:
+                System.out.println("APAKAH ANDA INGIN MENGAKHIRI PROGRAM? YES (1) / NO (2)");
+                d=sc.nextInt();
+                switch (d) {
+                    case 1:
+                        System.out.println("TERIMA KASIH");
+                        break;
+                    case 2:
+                        System.out.println("KAMU AKAN DIKEMBALIKAN KE MENU AWAL");
+                        menu();
+                        break;
+                    default:
+                        System.out.println("INPUT TIDAK DIMENGERTI \n");
+                        antiMC();
+                        break;
+                }   
+                break;
+            default:
+                System.out.println("INPUT TIDAK DIMENGERTI \n");
+                antiMC();
+        } 
+    }
+    
+    //B. UNTUK PROGRAM NAMA VARIABEL
+    private static void antiNV(){
+        Scanner sc = new Scanner (System.in);
+        int s,d;
+        System.out.println("APAKAH ANDA INGIN KEMBALI KE PROGRAM 1? YES (1) / NO (2)");
+        s = sc.nextInt();
+        switch (s) {
+            case 1:
+                Namvar();
+                break;
+            case 2:
+                System.out.println("APAKAH ANDA INGIN MENGAKHIRI PROGRAM? YES (1) / NO (2)");
+                d=sc.nextInt();
+                switch (d) {
+                    case 1:
+                        System.out.println("TERIMA KASIH");
+                        break;
+                    case 2:
+                        System.out.println("KAMU AKAN DIKEMBALIKAN KE MENU AWAL");
+                        menu();
+                        break;
+                    default:
+                        System.out.println("INPUT TIDAK DIMENGERTI \n");
+                        antiNV();
+                        break;
+                }   
+                break;
+            default:
+                System.out.println("INPUT TIDAK DIMENGERTI \n");
+                antiNV();
+        }
+    }
+    
+    //C. UNTUK PROGRAM KALKULASI JAM - MENIT - DETIK
+    private static void antiKJMD(){
+        Scanner sc = new Scanner (System.in);
+        int s,d;
+        System.out.println("APAKAH ANDA INGIN KEMBALI KE PROGRAM 1? YES (1) / NO (2)");
+        s = sc.nextInt();
+        switch (s) {
+            case 1:
+                KJMD();
+                break;
+            case 2:
+                System.out.println("APAKAH ANDA INGIN MENGAKHIRI PROGRAM? YES (1) / NO (2)");
+                d=sc.nextInt();
+                switch (d) {
+                    case 1:
+                        System.out.println("TERIMA KASIH");
+                        break;
+                    case 2:
+                        System.out.println("KAMU AKAN DIKEMBALIKAN KE MENU AWAL");
+                        menu();
+                        break;
+                    default:
+                        System.out.println("INPUT TIDAK DIMENGERTI \n");
+                        antiKJMD();
+                        break;
+                }   
+                break;
+            default:
+                System.out.println("INPUT TIDAK DIMENGERTI \n");
+                antiKJMD();
+        }
+    }
+    
+    //D. UNTUK PROGRAM KALKULASI JARAK TEMPUH
+    private static void antiKJT(){
+        Scanner sc = new Scanner (System.in);
+        int s,d;
+        System.out.println("APAKAH ANDA INGIN KEMBALI KE PROGRAM 1? YES (1) / NO (2)");
+        s = sc.nextInt();
+        switch (s) {
+            case 1:
+                KJT();
+                break;
+            case 2:
+                System.out.println("APAKAH ANDA INGIN MENGAKHIRI PROGRAM? YES (1) / NO (2)");
+                d=sc.nextInt();
+                switch (d) {
+                    case 1:
+                        System.out.println("TERIMA KASIH");
+                        break;
+                    case 2:
+                        System.out.println("KAMU AKAN DIKEMBALIKAN KE MENU AWAL");
+                        menu();
+                        break;
+                    default:
+                        System.out.println("INPUT TIDAK DIMENGERTI \n");
+                        antiKJT();
+                        break;
+                }   
+                break;
+            default:
+                System.out.println("INPUT TIDAK DIMENGERTI \n");
+                antiKJT();
+        }
+    }
+    
+    //E. UNTUK PROGRAM MENU
+    private static void alert(){
+    System.out.println("APAKAH ANDA INGIN MENGAKHIRI PROGRAM? YES (1) / NO (2)");
+    Scanner sc = new Scanner (System.in);
+    int d=sc.nextInt();
+        switch (d) {
+            case 1:
+                System.out.println("TERIMA KASIH");
+                break;
+            case 2:
+                System.out.println("KAMU AKAN DIKEMBALIKAN KE MENU AWAL");
+                menu();
+                break;
+            default:
+                System.out.println("INPUT TIDAK DIMENGERTI \n");
+                alert();
+                break;
+        }
+    }
+}
