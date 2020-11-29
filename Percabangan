@@ -1,0 +1,1032 @@
+package Percabangan;
+
+import java.util.*;
+import javax.swing.*;
+
+
+public class Pengembangancabang {
+    public static void main (String[] args){
+        menu();
+    }
+    static void menu(){
+        String input;
+        Scanner inp = new Scanner (System.in);
+        System.out.println("HALO SELAMAT DATANG DI PROGRAM KEDUA, TENTANG PERCABANGAN\n"
+                + "Anda Ingin menuju kemana hari ini?\n"
+                + "1. 8 CONTOH PERULANGAN\n"
+                + "2. 4 TUGAS PPT\n");
+        input = inp.nextLine();
+        switch (input){
+            case "1":
+            case "a":
+            case "A":
+                latihan1();
+                latihan2();
+                latihan3();
+                latihan4();
+                latihan5();
+                latihan6();
+                latihan7();
+                latihan8();
+                ulangmenu();
+                break;
+            
+            case "2":
+            case "b":
+            case "B":
+                /*
+                tugas1();
+                tugas2();
+                tugas3();
+                */
+                tugas4();
+                ulangmenu();
+                break;
+                
+            default:
+               System.out.println("Anda Yakin Ingin Keluar dari Program ? Y / N");
+               input = inp.nextLine();
+               switch (input){
+                    case "yes":
+                    case "yES":
+                    case "Yes":
+                    case "1":
+                    case "y":
+                    case "Y":
+                        System.out.println("TERIMAKASIH :D");
+                        break;
+                       
+                    case "no":
+                    case "No":
+                    case "2":
+                    case "n":
+                    case "N":
+                        System.out.println("BAIKLAH");
+                        ulangmenu();
+                        break;
+                        
+                    default:
+                        System.out.println("INPUT TIDAK DIMENGERTI, SILAHKAN KEMBALI KE PROGRAM");
+                        ulangmenu();
+                        break;
+               }
+        } 
+    }
+        private static void ulangmenu(){
+            System.out.println("\n\n\n\n");
+            menu();
+        }
+    
+    
+    //CONTOH
+    
+    //Test lOGIKA AND
+    static void latihan1(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 1 TEST lOGIKA AND\n"
+                +          "__________________________\n");
+        int i = 0; int j = 10; boolean test;
+        //demonstrasi &&
+        test = (i > 10) && (j++ > 9);
+        System.out.println("//demonstrasi &&");
+        System.out.println("NILAI I = " + i); 
+        System.out.println("NILAI J = " + j);
+        System.out.println("MAKA LOGIKA DARI (test = (i > 10) && (j++ > 9)) ADALAH " + test + "\n");
+        //demonstrasi &
+        test = (i > 10) & (j++ > 9);
+        System.out.println("//demonstrasi &&");
+        System.out.println("NILAI I = " + i); 
+        System.out.println("NILAI J = " + j);
+        System.out.println("MAKA LOGIKA DARI (test = (i > 10) & (j++ > 9))  ADALAH " + test+ "\n\n");
+        System.out.println("PENJELASAN :\n"
+                + "Lihat pada nilai J pada masing masing demonstrasi, terdapat perbedaan\n"
+                + "bukan?. Hal itu diakibatkan oleh && tidak memerlukan proses (j++ > 9) \n"
+                + "dikarenakan nilai (i > 10) sendiri sudah salah dan menganggap keduanya\n"
+                + "bernilai salah. Namun sebaliknya pada & memerlukan proses keduanya untuk\n"
+                + "menentukan apakah keduanya benar atau salah");
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    
+    //LATIHAN 2 OPERATOR LOGIKA DAN RELASI
+    static void latihan2(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 2 OPERATOR LOGIKA DAN RELASI \n"
+                +          "______________________________________\n");
+        l2no1();
+        l2no2();
+        l2no3();
+        l2no4();
+        System.out.println("==========================================================================\n\n");
+    }
+    private static void l2no1(){
+        boolean P = 2 > 1 || 3 <= 4 && 4 < 1;
+        System.out.println("1. (2 > 1 || 3 <= 4 && 4 < 1)                Hasilnya adalah : " + P + "\n");
+    }
+    private static void l2no2(){
+        boolean P = 2 < 1 && 3 <= 4 || 4 < 1;
+        System.out.println("2. (2 < 1 && 3 <= 4 || 4 < 1)                Hasilnya adalah : " + P + "\n");
+    }
+    private static void l2no3(){
+        boolean P = !(2 > 1) ^ (3 <= 4);
+        System.out.println("3. (!(2 > 1) ^ (3 <= 4))                     Hasilnya adalah : " + P + "\n");
+    }
+    private static void l2no4(){
+        boolean a,b,c,d;
+        int x,y,z;
+        x = 5;
+        y = 10;
+        z = 15;
+        a = true;
+        b = false;
+        c = false;
+        d = true;
+        System.out.println("4. Prioritas Operator Logika Kompleks\n");
+        System.out.println("Nilai-nilai Variabel : \n"
+                + "1. integer \n"
+                + "    -> a = " + a + "\n"
+                + "    -> b = " + b + "\n"
+                + "    -> c = " + c + "\n"
+                + "    -> d = " + d + "\n\n"
+                + "2. boolean" + "\n"
+                + "    -> x = " + x + "\n"
+                + "    -> y = " + y + "\n"
+                + "    -> z = " + z + "\n\nMAKA :  ");
+        System.out.println("1. (x != z || x == y || b)                   Hasilnya Adalah : " 
+                + (x != z || x == y || b));
+        
+        System.out.println("2. (x <= z && x > y && !b)                   Hasilnya Adalah : "
+                + (x <= z && x > y && !b));
+        
+        System.out.println("3. (a && !b && !c)                           Hasilnya Adalah : " 
+                + (a && !b && !c));
+        
+        System.out.println("4. (x <= z && x > b && !b)                   Hasilnya Adalah : " 
+                + ((a && (c || b)) || !(c && b) && a));
+        
+        System.out.println("5. (((a && c) || b) || ((!c || !b) && a))    Hasilnya Adalah : " 
+                + (((a && c) || b) || ((!c || !b) && a)));
+        
+        System.out.println("6. (a && !(!c && !b) || !((c && b) || !a))   Hasilnya Adalah : " 
+                + (a && !(!c && !b) || !((c && b) || !a)));
+    }
+    
+    
+    //LATIHAN 3 TENTANG IF
+    static void latihan3(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 3 IF (BILANGAN GENAP) \n"
+                +          "_______________________________\n"
+                + "NOTE : OUTPUT DAN INPUT AKAN DITAMPILKAN DENGAN MEMAKAI SWING GUI\n\n");
+        
+
+        String nilai;
+        nilai = JOptionPane.showInputDialog("Input Nilai=");
+        int x = Integer.parseInt(nilai);
+        if (x % 2 == 0){
+            JOptionPane.showMessageDialog(null, "Bilangan yang diinput adalah bilangan genap");
+
+        }
+        System.out.println("INPUT DAN OUTPUT YANG MENGGUNAKAN SWING GUI TELAH DITUNJUKKAN");
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    //LATIHAN 4 TENTANG IF - ELSE
+    static void latihan4(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 4 IF  (BILANGAN GENAP - GANJIL)\n"
+                +          "________________________________________\n"
+                + "NOTE : OUTPUT DAN INPUT AKAN DITAMPILKAN DENGAN MEMAKAI SWING GUI\n\n");
+
+        String nilai;
+        nilai = JOptionPane.showInputDialog("Input Nilai=");
+        int x = Integer.parseInt(nilai);
+        if (x % 2 == 0){
+            JOptionPane.showMessageDialog(null, "Bilangan yang diinput adalah bilangan genap");
+
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Bilangan yang diinput adalah bilangan ganjil");
+        }
+        System.out.println("INPUT DAN OUTPUT YANG MENGGUNAKAN SWING GUI TELAH DITUNJUKKAN");
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    //LATIHAN 5 TENTANG IF - ELSE
+    static void latihan5(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 5 IF - ELSE (MEMENTUKAN POSITIF-NEGATIF X DAN Y)\n"
+                +          "__________________________________________________________\n"
+                + "NOTE : OUTPUT DAN INPUT AKAN DITAMPILKAN DENGAN MEMAKAI SWING GUI\n\n");
+        String A1, A2;
+        int x,y;
+        A1 = JOptionPane.showInputDialog("Input Nilai x=");
+        A2 = JOptionPane.showInputDialog("Input Nilai y=");
+        x = Integer.parseInt(A1);
+        y = Integer.parseInt(A2);
+        
+        if (x > 0){
+            if (y > 0){
+                JOptionPane.showMessageDialog(null, "Nilai x dan y positif");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Nilai x  positif dan y negatif");
+            }
+        }
+        else{
+            if (y > 0){
+                JOptionPane.showMessageDialog(null, "Nilai x negatif dan y positif");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Nilai x dan y negatif");
+            }
+        }
+        System.out.println("INPUT DAN OUTPUT YANG MENGGUNAKAN SWING GUI TELAH DITUNJUKKAN");
+        System.out.println("==========================================================================\n\n");
+    }
+
+    
+    //LATIHAN 6 TENTANG IF - ELSE LEBIH DARI 3 KASUS (CONTOH PENENTUAN BIDANG KARTESIAN)
+    static void latihan6(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 6 IF ELSE LEBIH DARI 3 KASUS (PENENTUAN KUADRAN)\n"
+                +          "__________________________________________________________\n"
+                + "NOTE : OUTPUT DAN INPUT AKAN DITAMPILKAN DENGAN MEMAKAI SWING GUI\n\n");
+        String A1, A2;
+        int x,y;
+        A1 = JOptionPane.showInputDialog("Input Nilai x=");
+        A2 = JOptionPane.showInputDialog("Input Nilai y=");
+        x = Integer.parseInt(A1);
+        y = Integer.parseInt(A2);
+
+        if (x > 0 && y > 0){
+           JOptionPane.showMessageDialog(null, "KUADRAN I");
+        }
+        else if (x < 0 && y > 0){
+            JOptionPane.showMessageDialog(null, "KUADRAN II");
+        }
+        else if (x > 0 && y < 0){
+            JOptionPane.showMessageDialog(null, "KUADRAN III");
+        }
+        else if (x < 0 && y < 0){
+            JOptionPane.showMessageDialog(null, "KUADRAN IV");
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "TIDAK TERLETAK DI KUADRAN MANAPUN");
+        }
+        System.out.println("INPUT DAN OUTPUT YANG MENGGUNAKAN SWING GUI TELAH DITUNJUKKAN");
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    
+    //LATIHAN 7 TENTANG TERNARY OPERATOR
+    static void latihan7(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 7 TERNARY OPERATOR (APAKAH BERNILAI TRUE / FALSE)\n"
+                +          "___________________________________________________________\n"
+                + "NOTE : OUTPUT AKAN DITAMPILKAN DENGAN MEMAKAI SWING GUI\n\n");
+        String status, a1;
+        int grade;
+        a1 = JOptionPane.showInputDialog("Input Nilai x=");
+        grade = Integer.parseInt(a1);
+        
+        //mendapatkan status pelajar
+        status=(grade >=60)?"Passed":"Fail";
+            JOptionPane.showMessageDialog(null, status);
+        System.out.println("INPUT DAN OUTPUT YANG MENGGUNAKAN SWING GUI TELAH DITUNJUKKAN");
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    //LATIHAN 8 TENTANG SWITCH
+    static void latihan8(){
+        System.out.println("==========================================================================");
+        System.out.println("LATIHAN 8 SWITCH OPERATOR (MENENTUKAN BILANGAN 1-4)\n"
+                +          "___________________________________________________________\n"
+                + "NOTE : OUTPUT AKAN DITAMPILKAN DENGAN MEMAKAI SWING GUI\n\n");
+        String nilai;
+        nilai = JOptionPane.showInputDialog("Input Nilai=");
+        int angka = Integer.parseInt(nilai);
+        
+        switch (angka){
+            case 1:
+                JOptionPane.showMessageDialog(null, "satu");
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(null, "dua");
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(null, "tiga");
+                break;
+            case 4:
+                JOptionPane.showMessageDialog(null, "empat");
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "angka yang dimasukkan salah");
+                latihan8();
+                break;
+        }
+        System.out.println("INPUT DAN OUTPUT YANG MENGGUNAKAN SWING GUI TELAH DITUNJUKKAN");
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    
+    
+    //TUGAS-TUGAS
+    
+    //TUGAS 1
+    private static void tugas1(){
+        /*
+        TUGAS 1
+            Karyawan PT “ABC” digaji berdasarkan jumlah jam kerjanya selama
+            satu minggu. Upah per jam adalah Rp 2.000. Bila jumlah jam kerja lebih
+            besar dari 48 jam, maka sisanya dianggap sebagai upah lembur. Upah
+            lembur adalah Rp3.000/jam. Tulislah program yang membaca jumlah jam
+            kerja karyawan selama seminggu lalu menentukan upah mingguannya. 
+        */
+        System.out.println("==========================================================================");
+        System.out.println("TUGAS 1 GAJI\n"
+                +          "______________\n");
+        Scanner input = new Scanner(System.in);
+        int  upahperminggu, jamkerja, upahlembur1, upahjamkerja, jamlembur, maks1minggu;
+        final int upahperjam, upahlembur,  jamkerjamax;
+        String inp;
+        upahperjam = 2000;
+        upahlembur = 3000;
+        jamkerjamax = 48;
+        
+        System.out.println("TENTUKAN OUTPUT DAN INPUT MENGGUNAKAN METODE APA\n"
+                + "a. SWING GUI\n"
+                + "b. IDE BIASA\n"
+                + "c. Campuran");
+        inp = input.nextLine();
+        switch (inp){
+            case "c": case "C": case "3":
+                inp = JOptionPane.showInputDialog("Input Nilai=");
+                maks1minggu = Integer.parseInt(inp);
+
+
+                if (maks1minggu > 168){
+                    JOptionPane.showMessageDialog(null, "MAAF ANDA TELAH MELEWATI WAKTU 168 JAM (1 MINGGU)");
+                    tugas1();
+                }
+                else if (maks1minggu <= 168 && maks1minggu > 0){
+                    jamkerja = maks1minggu;
+                    if (jamkerja > 48){
+                        JOptionPane.showMessageDialog(null, "TERIMAKASIH ATAS KERJA KERASNYA");
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        JOptionPane.showMessageDialog(null, "JAM KERJA : " + jamkerja);
+                        JOptionPane.showMessageDialog(null, "UPAH PERMINGGU : Rp" + upahperminggu);
+                        JOptionPane.showMessageDialog(null, "UPAH LEMBUR : Rp" + upahlembur1 +" dengan jam lembur : "
+                                + jamlembur + "jam");
+                        JOptionPane.showMessageDialog(null, "UPAH JAM KERJA: Rp" + upahjamkerja +" dengan jam kerja : "
+                                + (jamkerja - jamlembur) + "jam");
+                        JOptionPane.showMessageDialog(null, "PLEASE WAIT...");
+                        System.out.println("=======================NOTA=========================");
+                        System.out.println("        PENJELAS        |  JAM KERJA  |    UPAH    |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL JAM LEMBUR        |     " + jamlembur  + "     |  " + upahlembur1 + "  |");
+                        System.out.println("TOTAL JAM KERJA         |     " +(jamkerja - jamlembur) + "     |     "+ upahjamkerja + "  |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL                   |    " +jamkerja + "      |    " +upahperminggu + "  |");
+                        JOptionPane.showMessageDialog(null, "NOTA ANDA SUDAH TERCETAK");
+                     }
+                    else if (jamkerja >= 0 && jamkerja <48){
+                        JOptionPane.showMessageDialog(null, "TERIMAKASIH ATAS PELAYANAN KERJANYA");
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        JOptionPane.showMessageDialog(null, "JAM KERJA : " + jamkerja);
+                        JOptionPane.showMessageDialog(null, "UPAH PERMINGGU : Rp" + upahperminggu);
+                        JOptionPane.showMessageDialog(null, "UPAH LEMBUR : Rp" + upahlembur1 +" dengan jam lembur : "
+                                + jamlembur + "jam");
+                        JOptionPane.showMessageDialog(null, "UPAH JAM KERJA: Rp" + upahjamkerja +" dengan jam kerja : "
+                                + (jamkerja - jamlembur) + "jam");
+                        JOptionPane.showMessageDialog(null, "PLEASE WAIT...");
+                        System.out.println("=======================NOTA=========================");
+                        System.out.println("        PENJELAS        |  JAM KERJA  |    UPAH    |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL JAM LEMBUR        |     " + jamlembur  + "     |  " + upahlembur1 + "  |");
+                        System.out.println("TOTAL JAM KERJA         |     " +(jamkerja - jamlembur) + "     |     "+ upahjamkerja + "  |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL                   |    " +jamkerja + "      |    " +upahperminggu + "  |");
+                        JOptionPane.showMessageDialog(null, "NOTA ANDA SUDAH TERCETAK");
+
+
+                    }
+                    else if (jamkerja < 0){
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        upahperminggu = -(upahperminggu);
+                        jamkerja = -(jamkerja);
+                        System.out.println("ANDA BERHUTANG KEPADA KAMI!");
+                        System.out.println("SEBESAR = Rp" + upahperminggu);
+                        System.out.println("MOHON BEKERJA TANPA GAJI SELAMA = " + jamkerja + " Jam, "
+                                + "Atau selama " + (jamkerja / 24) + " Hari " + (jamkerja % 24) + " Jam\n" );
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "INPUT SALAH!");
+                        tugas1();
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "INPUT SALAH!");
+                    tugas1();
+                }
+                break;
+                
+            case "b": case "B": case "2":
+                System.out.print("INPUTKAN NILAI :");
+                maks1minggu = input.nextInt();
+                if (maks1minggu >168){
+                    System.out.println("MAAF ANDA TELAH MELEWATI WAKTU 168 JAM (1 MINGGU)");
+                    tugas1();
+                }
+                else if (maks1minggu <=168 && maks1minggu > 0){
+                    jamkerja = maks1minggu;
+                    if (jamkerja > 48){
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        System.out.println("=======================NOTA=========================");
+                        System.out.println("        PENJELAS        |  JAM KERJA  |    UPAH    |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL JAM LEMBUR        |     " + jamlembur  + "     |  " + upahlembur1 + "  |");
+                        System.out.println("TOTAL JAM KERJA         |     " +(jamkerja - jamlembur) + "     |     "+ upahjamkerja + "  |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL                   |    " +jamkerja + "      |    " +upahperminggu + "  |");
+                    }
+                    else if (jamkerja <48 && jamkerja >0){
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        System.out.println("=======================NOTA=========================");
+                        System.out.println("        PENJELAS        |  JAM KERJA  |    UPAH    |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL JAM LEMBUR        |     " + jamlembur  + "     |  " + upahlembur1 + "  |");
+                        System.out.println("TOTAL JAM KERJA         |     " +(jamkerja - jamlembur) + "     |     "+ upahjamkerja + "  |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL                   |    " +jamkerja + "      |    " +upahperminggu + "  |");
+                    }
+                    else if (jamkerja <0){
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        upahperminggu = -(upahperminggu);
+                        jamkerja = -(jamkerja);
+                        System.out.println("ANDA BERHUTANG KEPADA KAMI!");
+                        System.out.println("SEBESAR = Rp" + upahperminggu);
+                        System.out.println("MOHON BEKERJA TANPA GAJI SELAMA = " + jamkerja + " Jam, "
+                                + "Atau selama " + (jamkerja / 24) + " Hari " + (jamkerja % 24) + " Jam\n" );
+                    }
+                    else {
+                        System.out.println("INPUT SALAH");
+                        tugas1();
+                    }
+                }
+                else {
+                   System.out.println("INPUT SALAH");
+                   tugas1(); 
+                }
+                break;
+                
+            case "a": case "A": case "1":
+                inp = JOptionPane.showInputDialog("Input Nilai=");
+                maks1minggu = Integer.parseInt(inp);
+
+
+                if (maks1minggu > 168){
+                    JOptionPane.showMessageDialog(null, "MAAF ANDA TELAH MELEWATI WAKTU 168 JAM (1 MINGGU)");
+                    tugas1();
+                }
+                else if (maks1minggu <= 168 && maks1minggu > 0){
+                    jamkerja = maks1minggu;
+                    if (jamkerja > 48){
+                        JOptionPane.showMessageDialog(null, "TERIMAKASIH ATAS KERJA KERASNYA");
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        JOptionPane.showMessageDialog(null, "JAM KERJA : " + jamkerja);
+                        JOptionPane.showMessageDialog(null, "UPAH PERMINGGU : Rp" + upahperminggu);
+                        JOptionPane.showMessageDialog(null, "UPAH LEMBUR : Rp" + upahlembur1 +" dengan jam lembur : "
+                                + jamlembur + "jam");
+                        JOptionPane.showMessageDialog(null, "UPAH JAM KERJA: Rp" + upahjamkerja +" dengan jam kerja : "
+                                + (jamkerja - jamlembur) + "jam");
+                        JOptionPane.showMessageDialog(null, "PLEASE WAIT...");
+                        System.out.println("=======================NOTA=========================");
+                        System.out.println("        PENJELAS        |  JAM KERJA  |    UPAH    |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL JAM LEMBUR        |     " + jamlembur  + "     |  " + upahlembur1 + "  |");
+                        System.out.println("TOTAL JAM KERJA         |     " +(jamkerja - jamlembur) + "     |     "+ upahjamkerja + "  |");
+                        System.out.println("___________________________________________________+");
+                        System.out.println("TOTAL                   |    " +jamkerja + "      |    " +upahperminggu + "  |");
+                        JOptionPane.showMessageDialog(null, "NOTA ANDA SUDAH TERCETAK");
+                     }
+                    else if (jamkerja >= 0 && jamkerja <48){
+                        JOptionPane.showMessageDialog(null, "TERIMAKASIH ATAS PELAYANAN KERJANYA");
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        JOptionPane.showMessageDialog(null, "JAM KERJA : " + jamkerja);
+                        JOptionPane.showMessageDialog(null, "UPAH PERMINGGU : Rp" + upahperminggu);
+                        JOptionPane.showMessageDialog(null, "UPAH LEMBUR : Rp" + upahlembur1 +" dengan jam lembur : "
+                                + jamlembur + "jam");
+                        JOptionPane.showMessageDialog(null, "UPAH JAM KERJA: Rp" + upahjamkerja +" dengan jam kerja : "
+                                + (jamkerja - jamlembur) + "jam");
+                    }
+                    else if (jamkerja < 0){
+                        jamlembur = jamkerja - jamkerjamax;
+                        upahlembur1 = jamlembur * upahlembur;
+                        upahjamkerja = (jamkerja - jamlembur) * upahperjam;
+                        upahperminggu = upahlembur1 + upahjamkerja;
+                        upahperminggu = -(upahperminggu);
+                        jamkerja = -(jamkerja);
+                        JOptionPane.showMessageDialog(null, "ANDA BERHUTANG KEPADA KAMI!");
+                        JOptionPane.showMessageDialog(null, "SEBESAR = Rp" + upahperminggu);
+                        JOptionPane.showMessageDialog(null, "MOHON BEKERJA TANPA GAJI SELAMA = " + jamkerja + " Jam, "
+                                + "Atau selama " + (jamkerja / 24) + " Hari " + (jamkerja % 24) + " Jam\n");
+
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "INPUT SALAH!");
+                        tugas1();
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "INPUT SALAH!");
+                    tugas1();
+                }
+                break;
+        }
+        
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    //TUGAS 2
+    private static void tugas2(){
+    /*
+    TUGAS 2
+        Diketahui bahwa cuaca dikatakan panas apabila temperatur 30°C,
+        normal apabila 24°C, dingin apabila temperatur dari 20°C. Buatlah
+        program yang membaca niai temperatur kemudian menampilkan kata
+        “Panas”, “Dingin”, atau “Normal” berdasarkan kondisi temperatur
+        (Gunakan switch case).
+
+    */
+        System.out.println("==========================================================================");
+        System.out.println("TUGAS 2 TEMPERATUR\n"
+                +          "______________\n");
+        boolean flag = false;
+        int suhu;
+        String inp;
+        Scanner input = new Scanner(System.in) , temp = new Scanner(System.in);
+        System.out.print("Masukkan temperatur :");
+        System.out.println("TENTUKAN OUTPUT DAN INPUT MENGGUNAKAN METODE APA\n"
+                + "a. SWING GUI\n"
+                + "b. IDE BIASA\n");
+        inp = input.nextLine();
+        switch (inp){
+            case "A": case "a": case "1":
+                inp = JOptionPane.showInputDialog("Input Nilai=");
+                suhu = Integer.parseInt(inp);
+                switch (suhu){
+                    case 30 :
+                        JOptionPane.showMessageDialog(null, "CUACA SAAT INI PANAS");
+                        break;
+                    case 24 :
+                        JOptionPane.showMessageDialog(null, "CUACA SAAT INI NORMAL");
+                        break;
+                    case 20 :
+                        JOptionPane.showMessageDialog(null, "CUACA SAAT INI DINGIN");
+                        break;
+                    default :
+                        if(suhu > 30){
+                            JOptionPane.showMessageDialog(null, "CUACA SAAT INI SANGAT PANAS");
+                        }
+                        else if (suhu >24 && suhu <30){
+                            JOptionPane.showMessageDialog(null, "CUACA SAAT INI NORMAL");
+                        }
+                        else {
+                            JOptionPane.showMessageDialog(null, "CUACA SAAT INI SANGAT DINGIN");
+                        }
+                        break;
+                }
+                break;
+                
+            case "B": case "b": case "2":
+                do{
+                    try {
+                        suhu = temp.nextInt();
+                        System.out.println();
+                        switch (suhu){
+                            case 30 :
+                                System.out.println("CUACA SAAT INI PANAS");
+                                break;
+                            case 24 :
+                                System.out.println("CUACA SAAT INI NORMAL");
+                                break;
+                            case 20 :
+                                System.out.println("CUACA SAAT INI DINGIN");
+                                break;
+                            default :
+                                if(suhu > 30){
+                                    System.out.println("CUACA SAAT INI SANGAT PANAS");
+                                }
+                                else if (suhu >24 && suhu <30){
+                                    System.out.println("CUACA SAAT INI NORMAL");
+                                }
+                                else {
+                                    System.out.println("CUACA SAAT INI SANGAT DINGIN");
+                                }
+                                break;
+                        }
+                    }
+                    catch(InputMismatchException exception){
+                        System.out.println("HANYA INTEGER SAJA YANG DIPERBOLEHKAN!");
+                        tugas2recovery();
+                        break;
+
+                    }
+                }
+                while (flag);
+                break;
+                     
+            default:
+                System.out.println("INPUT SALAH");
+                tugas2();
+                break;
+        } 
+        
+        System.out.println("==========================================================================\n\n"); 
+    
+    }
+    private static void tugas2recovery(){
+        tugas2();
+    }
+    
+    //TUGAS 3
+    private static void tugas3(){
+    /*
+        
+        Buatlah algoritma untuk menghitung gaji bersih pegawai. Masukan
+        adalah nama dan golongan pegawai. Jika Golongan A maka Gaji Pokok
+        400 rb, B 500 rb, C 750 rb dan D 900 rb. Tunjangan 30% dari Gaji Pokok,
+        Pajak 5% dari Gaji Pokok ditambah Tunjangan. Gaji Bersih = Gaji Pokok +
+        Tunjangan - Pajak.
+ 
+    */
+        System.out.println("==========================================================================");
+        System.out.println("TUGAS 3 GAJI\n"
+                +          "______________\n");
+        
+        String nama, golongan;
+        final int a = 400000, b = 500000, c = 750000, d = 900000;
+        double Tunjangan = 0.3 , pajak = 0.05, gaji;
+        int gajibersih;
+        String input;
+        Scanner inp = new Scanner (System.in), temp = new Scanner (System.in);
+        
+        System.out.println("TENTUKAN OUTPUT DAN INPUT MENGGUNAKAN METODE APA\n"
+                + "a. SWING GUI\n"
+                + "b. IDE BIASA\n");
+        input = temp.nextLine();
+        switch (input){
+            case "A": case "a": case "1":
+                nama = JOptionPane.showInputDialog(null, "Masukkan Nama Anda");
+                golongan = JOptionPane.showInputDialog(null, "Masukkan Golongan Anda (A - D)");
+                JOptionPane.showMessageDialog(null , "\n\nPLEASE WAIT...\n\n");
+                switch (golongan){
+                    case "A": case "a":
+                        gaji = a + (a*Tunjangan) - (a*pajak);
+                        gajibersih = (int) gaji;
+                        JOptionPane.showMessageDialog(null, "HALO " + nama);
+                        JOptionPane.showMessageDialog(null, "GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    case "B": case "b": 
+                        gaji = b + (b*Tunjangan) - (b*pajak);
+                        gajibersih = (int) gaji;
+                        JOptionPane.showMessageDialog(null, "HALO " + nama);
+                        JOptionPane.showMessageDialog(null, "GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    case "C": case "c": 
+                        gaji = c + (c*Tunjangan) - (c*pajak);
+                        gajibersih = (int) gaji;
+                        JOptionPane.showMessageDialog(null, "HALO " + nama);
+                        JOptionPane.showMessageDialog(null, "GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    case "D": case "d": 
+                        gaji = d + (d*Tunjangan) - (d*pajak);
+                        gajibersih = (int) gaji;
+                        JOptionPane.showMessageDialog(null, "HALO " + nama);
+                        JOptionPane.showMessageDialog(null, "GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    default:
+                        JOptionPane.showMessageDialog(null, "HALO " + nama);
+                        JOptionPane.showMessageDialog(null, "GOLONGAN TIDAK DIKETAHUI, SILAHKAN INPUT ULANG!\n\n");
+                        tugas3();
+                        break;
+                }
+                break;
+                
+            case "B": case "b": case "2":
+                System.out.print("MASUKKAN NAMA : ");
+                nama=inp.nextLine();
+                nama = nama.toUpperCase();
+
+                System.out.print("MASUKKAN GOLONGAN ( A - D ) : ");
+                golongan=inp.nextLine();
+                System.out.println("\n\nPLEASE WAIT...\n\n");
+                switch (golongan){
+                    case "A": case "a":
+                        gaji = a + (a*Tunjangan) - (a*pajak);
+                        gajibersih = (int) gaji;
+                        System.out.println("HALO " + nama);
+                        System.out.println("GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    case "B": case "b": 
+                        gaji = b + (b*Tunjangan) - (b*pajak);
+                        gajibersih = (int) gaji;
+                        System.out.println("HALO " + nama);
+                        System.out.println("GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    case "C": case "c": 
+                        gaji = c + (c*Tunjangan) - (c*pajak);
+                        gajibersih = (int) gaji;
+                        System.out.println("HALO " + nama);
+                        System.out.println("GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    case "D": case "d": 
+                        gaji = d + (d*Tunjangan) - (d*pajak);
+                        gajibersih = (int) gaji;
+                        System.out.println("HALO " + nama);
+                        System.out.println("GAJI ANDA = Rp" + gajibersih);
+                        break;
+
+                    default:
+                        System.out.println("HALO " + nama);
+                        System.out.println("GOLONGAN TIDAK DIKETAHUI, SILAHKAN INPUT ULANG!\n\n");
+                        tugas3();
+                        break;
+                }
+                break;
+            
+            default:
+                System.out.println("INPUT SALAH");
+                tugas3();
+                break;
+        }
+       
+        System.out.println("==========================================================================\n\n");
+    }
+    
+    //TUGAS 4
+    private static void tugas4(){
+    /*
+        Tulislah algoritma untuk menentukan bilangan terbesar dari jika
+            a. Membaca 2 bilangan (Gunakan ternary operator dan if - else)
+            b. Membaca 3 bilangan
+    */
+        tugas4a();
+        tugas4b();
+        System.out.println("\n\n\n\n");
+        menu();
+    
+    }
+    private static void tugas4a(){
+        System.out.println("==========================================================================");
+        System.out.println("TUGAS 4 (A) MEMBACA 2 BILANGAN\n"
+                +          "______________\n");
+        String A;
+        int x, y, max;
+        Scanner inp = new Scanner (System.in), temp = new Scanner (System.in);
+        System.out.println("TENTUKAN OUTPUT DAN INPUT MENGGUNAKAN METODE APA\n"
+                + "a. SWING GUI\n"
+                + "b. IDE BIASA\n");
+        A = temp.nextLine();
+        switch (A){
+            case "a": case "A": case "1":
+                A = JOptionPane.showInputDialog(null, "Masukkan Nilai Pertama");
+                x = Integer.parseInt(A);
+                A = JOptionPane.showInputDialog(null, "Masukkan Nilai Kedua");
+                y = Integer.parseInt(A);
+                max = (x > y) ? x : y;
+                if (max == x) {
+                    JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + x );
+                    JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + y  );
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + y );
+                    JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + x  );
+                }
+                break;
+                
+            case "b": case "B": case "2":
+                System.out.print("MASUKKAN NILAI PERTAMA : ");
+                x=inp.nextInt();
+                System.out.print("MASUKKAN NILAI KEDUA : ");
+                y=inp.nextInt();
+                max = (x > y) ? x : y;
+                if (max == x) {
+                    System.out.println("NILAI YANG TERBESAR ADALAH : " + x );
+                    System.out.println("NILAI YANG TERKECIL ADALAH : " + y );
+                }
+                else{
+                    System.out.println("NILAI YANG TERBESAR ADALAH : " + y );
+                    System.out.println("NILAI YANG TERKECIL ADALAH : " + x );
+                }
+                break;
+            
+            default:
+                break;
+            
+        }
+        
+        System.out.println("==========================================================================\n\n");
+    }
+    private static void tugas4b(){
+        System.out.println("==========================================================================");
+        System.out.println("TUGAS 4 (B) MEMBACA 3 BILANGAN\n"
+                +          "______________\n");
+        int x, y, z,  max;
+        String A;
+        Scanner inp = new Scanner (System.in), temp = new Scanner (System.in);
+        System.out.println("TENTUKAN OUTPUT DAN INPUT MENGGUNAKAN METODE APA\n"
+                + "a. SWING GUI\n"
+                + "b. IDE BIASA\n");
+        A = temp.nextLine();
+        switch (A){
+            case "a": case "A": case "1":
+                A = JOptionPane.showInputDialog(null, "Masukkan Angka Pertama : ");
+                x = Integer.parseInt(A);
+                A = JOptionPane.showInputDialog(null, "Masukkan Angka Pertama : ");
+                y = Integer.parseInt(A);
+                A = JOptionPane.showInputDialog(null, "Masukkan Angka Pertama : ");
+                z = Integer.parseInt(A);
+                if (x == y){
+                    if ( y > z){
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y);
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + z);
+                    }
+                    else {
+                       JOptionPane.showMessageDialog(null,"NILAI YANG TERBESAR ADALAH : " + z );
+                       JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y );
+                    }
+                }
+                else if ( y ==  z ){
+                    if ( z > x){
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y);
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + x);
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"NILAI YANG TERBESAR ADALAH : " + x );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y );
+                    }
+                }
+                else if (x == z){
+                    if ( z > y){
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + x);
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + y);
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"NILAI YANG TERBESAR ADALAH : " + y );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + x );
+                    }
+                }
+                else if (x != y & y != z & x != z){
+                    max = (x > y) ? x : y;
+                    max = (y > z) ? y : z;
+                    if (max == x & y > z) {
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + x );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG KEDUA ADALAH : " + z );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + y );
+                    }
+                    else if (max == x & y < z ){
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + x );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG KEDUA ADALAH : " + y );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + z );
+                    }
+                    else if (max == y & x > z) {
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + y );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG KEDUA ADALAH : " + x );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + z );
+                    }
+                    else if (max == y  & x < z) {
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + y );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG KEDUA ADALAH : " + z );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + x );
+                    }
+                    else if (max == z & y > x ){
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + z );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG KEDUA ADALAH : " + y );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + x );
+                    }
+                    else if (max == z & y < x){
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERBESAR ADALAH : " + x );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG KEDUA ADALAH : " + z );
+                        JOptionPane.showMessageDialog(null, "NILAI YANG TERKECIL ADALAH : " + y );
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "INPUT SALAH");
+                        tugas4b();
+                    }
+                }
+                break;
+            
+            case "b": case "B": case "2":
+                System.out.print("MASUKKAN NILAI PERTAMA : ");
+                x=inp.nextInt();
+                System.out.print("MASUKKAN NILAI KEDUA : ");
+                y=inp.nextInt();
+                System.out.print("MASUKKAN NILAI KETIGA : ");
+                z=inp.nextInt();
+                if (x == y){
+                    if ( y > z){
+                        System.out.println("NILAI YANG TERBESAR ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + z);
+                    }
+                    else {
+                       System.out.println("NILAI YANG TERBESAR ADALAH : " + z);
+                       System.out.println("NILAI YANG TERKECIL ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y );
+                    }
+                }
+                else if ( y ==  z ){
+                    if ( z > x){
+                        System.out.println("NILAI YANG TERBESAR ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + x);
+                    }
+                    else {
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + x);
+                        System.out.println("NILAI YANG TERKECIL ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + y );
+                    }
+                }
+                else if (x == z){
+                    if ( z > y){
+                        System.out.println("NILAI YANG TERBESAR ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + x );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + y);
+                    }
+                    else {
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + y);
+                        System.out.println("NILAI YANG TERKECIL ADALAH NILAI VARIABEL X DAN Y DENGAN NILAI : " + x );
+                    }
+                }
+                else if (x != y & y != z & x != z){
+                    max = (x > y) ? x : y;
+                    max = (y > z) ? y : z;
+                    if (max == x & y > z) {
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + x );
+                        System.out.println("NILAI YANG KEDUA ADALAH : " + z );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + y );
+                    }
+                    else if (max == x & y < z ){
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + x );
+                        System.out.println("NILAI YANG KEDUA ADALAH : " + y );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + z );
+                    }
+                    else if (max == y & x > z) {
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + y );
+                        System.out.println("NILAI YANG KEDUA ADALAH : " + x );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + z );
+                    }
+                    else if (max == y  & x < z) {
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + y );
+                        System.out.println("NILAI YANG KEDUA ADALAH : " + z );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + x );
+                    }
+                    else if (max == z & y > x ){
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + z );
+                        System.out.println("NILAI YANG KEDUA ADALAH : " + y );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + x );
+                    }
+                    else if (max == z & y < x){
+                        System.out.println("NILAI YANG TERBESAR ADALAH : " + z );
+                        System.out.println("NILAI YANG KEDUA ADALAH : " + x );
+                        System.out.println("NILAI YANG TERKECIL ADALAH : " + y );
+                    }
+                    else {
+                        System.out.println("INPUT SALAH" );
+                        tugas4b();
+                    }
+                }
+                break;
+                    
+        }
+        System.out.println("==========================================================================\n\n");
+    }
+}    
