@@ -34,11 +34,9 @@ public class Pengembangancabang {
             case "2":
             case "b":
             case "B":
-                /*
                 tugas1();
                 tugas2();
                 tugas3();
-                */
                 tugas4();
                 ulangmenu();
                 break;
